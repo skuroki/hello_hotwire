@@ -6,9 +6,15 @@ Rails.application.routes.draw do
 
   post 'fortune', to: 'dashboard#fortune'
 
-  resources :randoms, only: :index do
+  resources :randoms, only: [:index, :update, :destroy] do
     collection do
       post :prepend
+      post :append
+    end
+    member do
+      post :replace
+      post :add_before
+      post :add_after
     end
   end
 end

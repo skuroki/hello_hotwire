@@ -2,5 +2,9 @@
 </div>
 
 <%= form_with url: prepend_randoms_path do |f| %>
-  <%= f.submit 'prepend' %>
+  <%= f.submit '先頭に追加' %>
+<% end %>
+
+<%= form_with url: append_randoms_path do |f| %>
+  <%= f.submit '末尾に追加' %>
 <% end %>
