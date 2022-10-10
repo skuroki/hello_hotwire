@@ -5,4 +5,10 @@ Rails.application.routes.draw do
   root "dashboard#index"
 
   post 'fortune', to: 'dashboard#fortune'
+
+  resources :randoms, only: :index do
+    collection do
+      post :prepend
+    end
+  end
 end
