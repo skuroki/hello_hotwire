@@ -1,0 +1,9 @@
+<p>こんにちは</p>
+
+<%#= render partial: 'fortune' %>
+<%= turbo_frame_tag 'fortune' do %>
+  <%= form_with url: fortune_path do |f| %>
+    <%= f.submit 'おみくじを引く！' %>
+  <% end %>
+<% end %>
+

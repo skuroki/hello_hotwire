@@ -1,0 +1,7 @@
+<%= turbo_frame_tag 'fortune' do %>
+  <p>今日の運勢は<%= @fortune %>です</p>
+
+  <%= form_with url: fortune_path do |f| %>
+    <%= f.submit '引き直す！' %>
+  <% end %>
+<% end %>
