@@ -1,21 +1,5 @@
-<div id="<%= @dom_id %>" style="display: flex">
-  <p><%= @random %></p>
+<div>
+<p><%= @random %></p>
 
-  <%= form_with url: replace_random_path(id: @dom_id) do |f| %>
-    <%= f.submit '振り直す1' %>
-  <% end %>
-
-  <%= form_with url: random_path(id: @dom_id), method: :patch do |f| %>
-    <%= f.submit '振り直す2' %>
-  <% end %>
-
-  <%= button_to '削除する', random_path(id: @dom_id), method: :delete %>
-
-  <%= form_with url: add_before_random_path(id: @dom_id) do |f| %>
-    <%= f.submit '上に追加' %>
-  <% end %>
-
-  <%= form_with url: add_after_random_path(id: @dom_id) do |f| %>
-    <%= f.submit '下に追加' %>
-  <% end %>
+  <%#= button_to '削除する', random_path(id: @dom_id), method: :delete %>
 </div>

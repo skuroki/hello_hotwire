@@ -1,0 +1,13 @@
+<%= form_with url: false, id: 'interview', data: { controller: 'form' } do |form| %>
+  <p data-controller="validation" data-form-target="validation" data-validation-length-value="10" data-validation-validity-value="false" data-validation-form-id-value="interview">
+    <%= form.label :field1, '項目1（10文字まで）' %>
+    <%= form.text_field :field1, 'data-validation-target': 'field', 'data-action': 'input->validation#validate' %>
+    <span data-validation-target="errorMessage"></span>
+  </p>
+  <p data-controller="validation" data-form-target="validation" data-validation-length-value="15" data-validation-validity-value="false" data-validation-form-id-value="interview">
+    <%= form.label :field2, '項目2（15文字まで）' %>
+    <%= form.text_field :field2, 'data-validation-target': 'field', 'data-action': 'input->validation#validate' %>
+    <span data-validation-target="errorMessage"></span>
+  </p>
+  <%= form.button 'data-form-target': 'submit', disabled: true %>
+<% end %>
